@@ -1,29 +1,46 @@
 {
   "expo": {
-    "name": "InstilLearningHubNativeJS",
-    "slug": "InstilLearningHubNativeJS",
+    "name": "Instil Learning Hub",
+    "slug": "instil-learning-hub",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#db2777"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.instil.learninghub",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Allows audio recording for voice notes in chat.",
+        "NSPhotoLibraryUsageDescription": "Allows uploading screenshots/images for doubts."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.instil.learninghub"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+        [
+            "expo-image-picker",
+            {
+                "photosPermission": "The app accesses your photos to let you upload screenshots for doubts.",
+                "cameraPermission": "The app needs camera access for taking photos for doubts."
+            }
+        ],
+        "expo-av"
+    ]
   }
 }
