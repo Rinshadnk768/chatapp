@@ -19,7 +19,8 @@
       "bundleIdentifier": "com.instil.learninghub",
       "infoPlist": {
         "NSMicrophoneUsageDescription": "Allows audio recording for voice notes in chat.",
-        "NSPhotoLibraryUsageDescription": "Allows uploading screenshots/images for doubts."
+        "NSPhotoLibraryUsageDescription": "Allows uploading screenshots/images for doubts.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -27,20 +28,37 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.instil.learninghub"
+      "package": "com.instil.learninghub",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-        [
-            "expo-image-picker",
-            {
-                "photosPermission": "The app accesses your photos to let you upload screenshots for doubts.",
-                "cameraPermission": "The app needs camera access for taking photos for doubts."
-            }
-        ],
-        "expo-av"
-    ]
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you upload screenshots for doubts.",
+          "cameraPermission": "The app needs camera access for taking photos for doubts."
+        }
+      ],
+      "expo-av",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3317318e-315d-4e7f-bd3a-720889754910"
+      }
+    }
   }
 }
