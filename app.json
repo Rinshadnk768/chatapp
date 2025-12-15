@@ -49,8 +49,12 @@
       [
         "expo-build-properties",
         {
-          "ios": {
-            "useFrameworks": "static"
+          "ios": {            
+            "useFrameworks": "static",
+            "otherCFlags": [
+              "$(inherited)",
+              "-Wno-non-modular-include-in-framework-module"
+            ]
           }
         }
       ]
